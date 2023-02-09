@@ -3,12 +3,11 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    freopen("in.dat", "r", stdin);
-    freopen("out.dat", "w", stdout);
+    /* This is a comment. */
+    int distance = 100;
 
-    int year = { 0 };
-    scanf("%d", &year);
-    printf("hello world %d\n", year);
+    // this is also a comment
+    printf("You are %d miles away.\n", distance);
 
     return EXIT_SUCCESS;
 }

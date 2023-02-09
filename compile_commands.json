@@ -1,0 +1,19 @@
+[
+  {
+    "arguments": [
+      "d:/Programs/mingw64/bin/gcc.exe",
+      "-c",
+      "-g",
+      "-Wall",
+      "-Wno-unused-parameter",
+      "-pedantic",
+      "-std=c17",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "c:/Users/linya/workspaces/c",
+    "file": "c:/Users/linya/workspaces/c/src/main.c",
+    "output": "c:/Users/linya/workspaces/c/obj/main.o"
+  }
+]

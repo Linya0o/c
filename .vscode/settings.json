@@ -1,0 +1,16 @@
+{
+    "clangd.path": "c:/Users/linya/AppData/Roaming/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.6/clangd_15.0.6/bin/clangd.exe",
+    "clangd.checkUpdates": true,
+    "clangd.fallbackFlags": [],
+    "clangd.arguments": [
+        "--query-driver=d:/Programs/mingw64/bin/gcc.exe",
+        "--completion-parse=auto",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--background-index",
+        "--clang-tidy",
+        "--clang-tidy-checks=performance-*, bugprone-*, misc-*, google-*, modernize-*, readability-*, portability-*",
+        "--function-arg-placeholders=true",
+        "--pretty",
+    ]
+}

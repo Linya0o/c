@@ -3,29 +3,25 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    int areas[] = { 10, 12, 13, 14, 20 };
-    char name[] = "Zed";
-    char full_name[] = { "Zed A. Shaw" };
+    int i = 0;
 
-    // WARNING: On some systems you may have to change the
-    // %ld in this code to a %u since it will use unsigned ints
-    printf("The size of an int: %zu\n", sizeof(int));
-    printf("The size of areas (int[]): %zu\n", sizeof(areas));
-    printf("The number of ints in areas: %zu\n",
-            sizeof(areas) / sizeof(int));
-    printf("The first area is %d, the 2nd %d.\n", areas[0], areas[1]);
+    // go through each string in argv
+    // why am I skipping argv[0]?
+    for (i = 0; i < argc; i++) {
+        printf("arg %d: %s\n", i, argv[i]);
+    }
 
-    printf("The size of a char: %zu\n", sizeof(char));
-    printf("The size of name (char[]): %zu\n", sizeof(name));
-    printf("The number of chars: %zu\n", sizeof(name) / sizeof(char));
+    // let's make our own array of strings
+    char *states[] = {
+        "California", "Oregon",
+        "Washington", "Texas"
+    };
 
-    printf("The size of full_name (char[]): %zu\n", sizeof(full_name));
-    printf("The number of chars: %zu\n",
-            sizeof(full_name) / sizeof(char));
+    int num_states = 4;
 
-    full_name[12] = 'X';
-
-    printf("name=\"%s\" and full_name=\"%s\"\n", name, full_name);
+    for (i = 0; i < num_states; i++) {
+        printf("state %d: %s\n", i, states[i]);
+    }
 
     return EXIT_SUCCESS;
 }

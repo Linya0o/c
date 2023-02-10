@@ -1,27 +1,41 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <ctype.h>
+
+// forward declarations
+int can_print_it(char ch);
+void print_letters(char arg[]);
+void print_arguments(int argc, char *argv[]);
 
 int main(int argc, char *argv[]) {
-    int i = 0;
-
-    // go through each string in argv
-    // why am I skipping argv[0]?
-    for (i = 0; i < argc; i++) {
-        printf("arg %d: %s\n", i, argv[i]);
-    }
-
-    // let's make our own array of strings
-    char *states[] = {
-        "California", "Oregon",
-        "Washington", "Texas"
-    };
-
-    int num_states = 4;
-
-    for (i = 0; i < num_states; i++) {
-        printf("state %d: %s\n", i, states[i]);
-    }
+    print_arguments(argc, argv);
 
     return EXIT_SUCCESS;
+}
+
+void print_arguments(int argc, char *argv[]) {
+    int i = 0;
+
+    for (i = 0; i < argc; i++) {
+        print_letters(argv[i]);
+    }
+}
+
+void print_letters(char arg[]) {
+    int i = 0;
+
+    for (i = 0; arg[i] != '\0'; i++) {
+        char ch = arg[i];
+
+        if (can_print_it(ch)) {
+            printf("'%c' == %d ", ch, ch);
+        }
+    }
+
+    printf("\n");
+}
+
+int can_print_it(char ch) {
+    return isalpha(ch) || isblank(ch);
 }

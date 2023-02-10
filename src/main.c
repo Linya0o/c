@@ -3,11 +3,11 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    /* This is a comment. */
-    int distance = 100;
+    int age = 10;
+    int height = 72;
 
-    // this is also a comment
-    printf("You are %d miles away.\n", distance);
+    printf("I am %d years old.\n", age);
+    printf("I am %d inches tall.\n", height);
 
     return EXIT_SUCCESS;
 }

@@ -3,7 +3,9 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    while (1) { }
+    int ch;
+    while ((ch = getchar()) == ' ');
+    putchar(ch);
 
     return EXIT_SUCCESS;
 }

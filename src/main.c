@@ -3,12 +3,22 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    printf("%d %% %d : %d\n", -5, 2, -5 % 2);
-    printf("%d %% %d : %d\n", -5, -2, -5 % -2);
-    printf("%d %% %d : %d\n", 5, -2, -5 % -2);
+    /* counting qualified scores*/
+    int scores[] = { 6, 3, 5, 8, 4, };
+    int num_passing = 0, total_grades = 0;
 
-    int a[5] = { 0 }, i = 0;
-    a[i++] += 2;    // undefined behavior
-    printf("i : %d, a[0] : %d\n", i, a[0]);
+    for (size_t i = 0; i < sizeof(scores)/sizeof(int); i++) {
+        int grade = scores[i];
+        switch (grade) {
+            case 9: case 8: case 7: case 6:
+                // fallthrough
+                num_passing++;
+            default:
+                total_grades++;
+                break;
+        }
+    }
+    printf("%d out of %d grades are qualified.\n", num_passing, total_grades);
+
     return EXIT_SUCCESS;
 }
